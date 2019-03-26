@@ -1,0 +1,5 @@
+el polybios no da el hahs cuando tiene J o Ñ o caracteres raros, tambien cuando el texto tiene mayusculas y minuscilas
+
+el Atbash tambien debe tener todo el texto en mayusculas y sin caracteres especiales
+
+ABCDEFGHIJKLMNÑOPQRSTUVWXYZÜ«ÏÙÃÀ][%3_ 
