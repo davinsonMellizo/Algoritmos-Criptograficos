@@ -120,18 +120,20 @@ def main():
 			if sys.argv[1]=="-af":
 				AnalisisFrecuencia()
 				mostrarMenu=False
-		#si es igual a 4 puede ser julio cesar o Atbash	
-		if (len(sys.argv)==4):
+		#si es igual a 5 puede ser julio cesar o Atbash	
+		if (len(sys.argv)==5):
 			if sys.argv[1]=="-at" and sys.argv[2]=="-c":
-				cod=codificar()
-				cifrarAtbash(cod)
-				mostrarMenu=False
+				if(sys.argv[3]=="-N" or sys.argv[3]=="-S" or sys.argv[3]=="-n" or sys.argv[3]=="-s"):
+					cod=sys.argv[3]
+					cifrarAtbash(cod)
+					mostrarMenu=False
 			if sys.argv[1]=="-at" and sys.argv[2]=="-d":
-				cod=codificar()
-				descifrarAtbash(cod)
-				mostrarMenu=False
+				if(sys.argv[3]=="-N" or sys.argv[3]=="-S" or sys.argv[3]=="-n" or sys.argv[3]=="-s"):
+					cod=sys.argv[3]
+					descifrarAtbash(cod)
+					mostrarMenu=False
 		#si es igual a 6 puede ser polybios
-		if(len(sys.argv)==5):
+		if(len(sys.argv)==6):
 			if sys.argv[1]=="-jc" and sys.argv[2]=="-c":
 				cifrarcesar(int(sys.argv[4]))
 				mostrarMenu=False
@@ -139,21 +141,25 @@ def main():
 				descifrarcesar(int(sys.argv[4]))
 				mostrarMenu=False
 			if sys.argv[1]=="-pb" and sys.argv[2]=="-c" and sys.argv[3]=="-n":
-				cod=codificar()
-				cifrarpolybios("n",cod)
-				mostrarMenu=False
+				if(sys.argv[4]=="-N" or sys.argv[4]=="-S" or sys.argv[4]=="-n" or sys.argv[4]=="-s"):
+					cod=sys.argv[4]
+					cifrarpolybios("n",cod)
+					mostrarMenu=False
 			if sys.argv[1]=="-pb" and sys.argv[2]=="-c" and sys.argv[3]=="-l":
-				cod=codificar()
-				cifrarpolybios("l",cod)
-				mostrarMenu=False
+				if(sys.argv[4]=="-N" or sys.argv[4]=="-S" or sys.argv[4]=="-n" or sys.argv[4]=="-s"):
+					cod=sys.argv[4]
+					cifrarpolybios("l",cod)
+					mostrarMenu=False
 			if sys.argv[1]=="-pb" and sys.argv[2]=="-d" and sys.argv[3]=="-n":
-				cod=codificar()
-				descifrarpolybios("n",cod)
-				mostrarMenu=False
+				if(sys.argv[4]=="-N" or sys.argv[4]=="-S" or sys.argv[4]=="-n" or sys.argv[4]=="-s"):
+					cod=sys.argv[4]
+					descifrarpolybios("n",cod)
+					mostrarMenu=False
 			if sys.argv[1]=="-pb" and sys.argv[2]=="-d" and sys.argv[3]=="-l":
-				cod=codificar()
-				descifrarpolybios("l",cod)
-				mostrarMenu=False
+				if(sys.argv[4]=="-N" or sys.argv[4]=="-S" or sys.argv[4]=="-n" or sys.argv[4]=="-s"):
+					cod=sys.argv[4]
+					descifrarpolybios("l",cod)
+					mostrarMenu=False
 		if(mostrarMenu):
 			menu.algoritmos()
 

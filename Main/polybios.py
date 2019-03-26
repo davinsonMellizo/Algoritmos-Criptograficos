@@ -17,7 +17,7 @@ class CifradoPolybios:
             self.__alfabetoC =  "123456789"
         self.__generar_alfabeto()
     def __generar_alfabeto(self):
-        if(self.__codificar=="S"):
+        if(self.__codificar=="S" or self.__codificar=="s"):
             archivo = open("alfabeto64.txt", mode="r")
         else:
             archivo = open("alfabeto.txt", mode="r")
@@ -27,12 +27,12 @@ class CifradoPolybios:
         
     #METODO POLYBIOS PARA CIFRAR
     def cifrar(self): 
-        archivo = open(sys.argv[4], mode="r",encoding="ISO-8859-1")
+        archivo = open(sys.argv[5], mode="r",encoding="ISO-8859-1")
         f = open ("Resultado.CIF",'w',encoding="ISO-8859-1")
         posLetra=0
         mensajeCifrado=""      
         texto=archivo.read()
-        if(self.__codificar=="S"):
+        if(self.__codificar=="S" or self.__codificar=="s"):
             texto=texto.encode("utf-8")
             texto=base64.b64encode(texto)
             texto=texto.decode("utf-8")
@@ -52,7 +52,7 @@ class CifradoPolybios:
         
     #METODO POLYBIOS PARA DESCIFRAR
     def descifrar(self): 
-        archivo = open(sys.argv[4], mode="r", encoding="ISO-8859-1")
+        archivo = open(sys.argv[5], mode="r", encoding="ISO-8859-1")
         f = open ("Resultado.DEC",'w',encoding="ISO-8859-1")
         mensajeDescifrado=""
         while True:
@@ -66,11 +66,10 @@ class CifradoPolybios:
             #SE GUARDA LA LETRA DESCIFRADA
             mensajeDescifrado=mensajeDescifrado+self.__alfabeto[posEnAlfabeto]
         
-        if(self.__codificar=="S"):
+        if(self.__codificar=="S" or self.__codificar=="s"):
             mensajeDescifrado=base64.b64decode(mensajeDescifrado)
             mensajeDescifrado=mensajeDescifrado.decode("utf-8")
         f.write(mensajeDescifrado)
-                
         archivo.close()
         f.close()
         
